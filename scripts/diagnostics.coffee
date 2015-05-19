@@ -4,7 +4,7 @@
 # Commands:
 #   hubot ping - Reply with pong
 #   hubot adapter - Reply with the adapter
-#   hubot echo <text> - Reply back with <text>
+#   hubot echo <text> - Reply back with <text> only if you're rid
 #   hubot time - Reply with current time
 #
 # Author:
@@ -20,9 +20,7 @@ module.exports = (robot) ->
   robot.respond /ECHO (.*)$/i, (res) ->
     if res.message.user.name.toLowerCase() == "rid"
         echo = res.match[1]
-        res.send "Senpai noticed me!"
         res.send echo
-        return
     else
         res.reply "You ain't the boss of me"
 
