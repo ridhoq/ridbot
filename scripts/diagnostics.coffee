@@ -17,7 +17,7 @@ module.exports = (robot) ->
   robot.respond /ADAPTER$/i, (msg) ->
     msg.send robot.adapterName
 
-  robot.respond /ECHO (.*)$/i, (msg) ->
+  robot.respond /ECHO (.*)$/i, (res) ->
     if res.message.user.name.toLowerCase() == "rid"
         echo = res.match[1]
         res.send "Senpai noticed me!"
