@@ -34,7 +34,7 @@ module.exports = (robot) ->
         
   robot.respond /([0-9]+)ECHO (.*)$/i, (res) ->
     if res.message.user.name.toLowerCase() == "rid"
-        n = res.match[0]
+        n = res.match[1]
         echo = res.match[2]
         res.send n
         res.send echo
