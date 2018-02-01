@@ -36,8 +36,8 @@ module.exports = (robot) ->
     if res.message.user.name.toLowerCase() == "rid"
         n = res.match[1]
         echo = res.match[2]
-        res.send n
-        res.send echo
+        for number in [1..n]
+          res.send echo
     else
         res.reply "You ain't the boss of me"
 
