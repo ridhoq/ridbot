@@ -23,6 +23,14 @@ module.exports = (robot) ->
         res.send echo
     else
         res.reply "You ain't the boss of me"
+        
+  robot.respond /DECHO (.*)$/i, (res) ->
+    if res.message.user.name.toLowerCase() == "rid"
+        echo = res.match[1]
+        res.send echo
+        res.send echo
+    else
+        res.reply "You ain't the boss of me"
 
   robot.respond /TIME$/i, (msg) ->
     msg.send "Server time is: #{new Date()}"
